@@ -34,11 +34,11 @@ func DefaultToolsetGroup(readOnly bool, getClient GetClientFn, getGQLClient GetG
 		).
 		AddWriteTools(
 			toolsets.NewServerTool(CreateOrUpdateFile(getClient, t)),
-			toolsets.NewServerTool(CreateRepository(getClient, t)),
-			toolsets.NewServerTool(ForkRepository(getClient, t)),
+			//Removed for Security: toolsets.NewServerTool(CreateRepository(getClient, t)),
+			//Removed for Security: toolsets.NewServerTool(ForkRepository(getClient, t)),
 			toolsets.NewServerTool(CreateBranch(getClient, t)),
 			toolsets.NewServerTool(PushFiles(getClient, t)),
-			toolsets.NewServerTool(DeleteFile(getClient, t)),
+			//Removed for Security: toolsets.NewServerTool(DeleteFile(getClient, t)),
 		).
 		AddResourceTemplates(
 			toolsets.NewServerResourceTemplate(GetRepositoryResourceContent(getClient, getRawClient, t)),
@@ -87,7 +87,7 @@ func DefaultToolsetGroup(readOnly bool, getClient GetClientFn, getGQLClient GetG
 			toolsets.NewServerTool(GetPullRequestDiff(getClient, t)),
 		).
 		AddWriteTools(
-			toolsets.NewServerTool(MergePullRequest(getClient, t)),
+			//Removed for Security: toolsets.NewServerTool(MergePullRequest(getClient, t)),
 			toolsets.NewServerTool(UpdatePullRequestBranch(getClient, t)),
 			toolsets.NewServerTool(CreatePullRequest(getClient, t)),
 			toolsets.NewServerTool(UpdatePullRequest(getClient, getGQLClient, t)),

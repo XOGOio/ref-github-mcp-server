@@ -12,6 +12,7 @@ __debug_bin*
 # Go
 vendor
 bin/
+*.exe
 
 # macOS
 .DS_Store
