@@ -4,7 +4,7 @@ trigger:
     - main
 
 variables:
-  dockerRegistryServiceConnection: 'Xogo Main Connection'
+  dockerRegistryServiceConnection: 'XogoDockerImages'
   imageRepository: 'github-mcp-server'
   containerRegistry: 'xogoimages.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
